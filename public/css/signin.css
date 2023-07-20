@@ -1,0 +1,37 @@
+*{
+    font-family: Poppins;
+}
+.container {
+    margin-top: 10%;
+}
+.sign {
+    color: #002B5B;
+}
+.in {
+    color: #159895;
+}
+.form {
+    color: #159895;
+}
+#btn{
+    background-color: #159895;
+    color: white;
+    border-radius: 12px;
+    height: 46px;
+    padding: 0 24px 0 24px;
+}
+.button-login{
+    width: 100%;
+}
+.lupa {
+    text-align: right;
+    font-size: 12px;
+    color: #159895;
+}
+.forgot {
+    text-align: center;
+    font-size: 12px;
+}
+.img {
+    margin-left: 2000%;
+}
