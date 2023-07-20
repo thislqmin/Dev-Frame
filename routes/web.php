@@ -17,6 +17,7 @@ use App\Http\Controllers\UserController;
 
 
 Route::resource('/', RegistrasiController::class);
+Route::get('landing', [RegistrasiController::class, 'landing'])->name('pages.landing');
 Route::get('signup', [RegistrasiController::class, 'signup'])->name('regis.signup');
 Route::get('signin', [RegistrasiController::class, 'signin'])->name('regis.signin');
 

@@ -1,0 +1,109 @@
+*{
+    font-family: Poppins;
+}
+body{
+    background-image: url(/img/bg.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+.logo{
+    color: #002B5B;
+
+}
+.nav-item a{
+    text-decoration: none;
+    color: #002B5B;
+}
+#btn{
+    background-color: #159895;
+    color: white;
+    border-radius: 12px;
+    height: 46px;
+    padding: 0 24px 0 24px;
+}
+#btn2{
+    border-radius: 12px;
+    height: 46px;
+    background-color: white;
+    border: 3px solid #159895;
+    color: #159895;
+    margin-left: 18px;
+    padding: 0 24px 0 24px;
+}
+.mulai-kiri{
+    margin-top: 150px;
+    margin-left: 105px;
+}
+.mulai h5{
+    margin-bottom: 25px;
+    color: #159895;
+}
+.mulai h3{
+    margin-bottom: 55px;
+}
+.teks{
+    margin-top: 110px;
+}
+.card{
+    border: none;
+    margin-bottom: 50px;
+}
+.card .row .col-4 img {
+    width: 80%;
+}
+.backgr {
+    background-image: url(/img/grup14.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    position: inherit;
+}
+.layanan{
+    margin-top: 100px;
+    padding: 100px 0 100px 0;
+}
+.layanan-kanan{
+    padding-right: 105px;
+}
+#accordion {
+    width: 100%;
+    padding-left: 0%;
+}
+#accordion li {
+    list-style: none;
+    width: 100%;
+    box-shadow: 3px 3px 3px 3px rgb(235, 235, 235);
+    border-radius: 10px;
+    padding: 16px 24px 0 24px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#accordion li label {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    cursor: pointer;
+}
+#accordion input[type="radio"]{
+    display: none;
+}
+#accordion .content {
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out;
+}
+#accordion input[type="radio"]:checked + label + .content {
+    max-height: 400px;
+}
+#accordion input[type="radio"]:checked + label img {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease-in;
+}
+#accordion input[type="radio"] + label img{
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-out;
+}

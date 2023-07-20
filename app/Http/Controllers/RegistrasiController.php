@@ -9,7 +9,12 @@ class RegistrasiController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function landing()
+    {
+        return view('pages.landing');
+    }
+    
+     public function index()
     {
         //
         return view('regis.signin');
@@ -49,6 +54,7 @@ class RegistrasiController extends Controller
     {
         return view('dashboard.create-jadwal');
     }
+
 
     /**
      * Show the form for creating a new resource.

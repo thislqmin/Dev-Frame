@@ -1,8 +1,13 @@
 <style>
-.sidebar {
-    width: 10px;
-    height: 100px;
-    background-color: none;
+  .sidebar {
+    display: flex;
+    width: 281px;
+    height: 1194px;
+    padding: 40px 32px 226px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 84px;
+    flex-shrink: 0;
   }
   
   .sidebar-header {
@@ -12,43 +17,39 @@
   
   .sidebar-menu {
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
     margin: 0;
   }
   
   .sidebar-menu li {
-    margin-bottom: 10px;
+    margin-bottom: 32px;
   }
   
   .sidebar-menu li a {
+    width: 217px;
+    height: 56px;
     display: block;
     padding: 15px;
     text-decoration: none;
+    color: white;
+    background-color: #159895;
+    border-radius: 12px;
   }
-  .profile-form {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    .profile-form h2 {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-    
-    .profile-form .form-group label {
-      font-weight: bold;
-      color: #002B5B;
-    }
 </style>
-    <div class="card-sidebar">
-        <img src="#" style="margin-bottom: 60px;" alt="">
-        <ul style="padding-left: 0; text-decoration: none">
-            <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
-            <li><a href="{{ route('dashboard.create-profile') }}">Profile</a></li>
-            <li><a href="{{ route('dashboard.create-jadwal') }}">Jadwal</a></li>
-            <li><a href="{{ route('dashboard.add-dokter') }}">Dokter</a></li>
-            <li><a href="{{ route('dashboard.create-notes') }}">Notes</a></li>
-            <li style="margin-top: 250px;"><a href="#">Logout</a></li>
-        </ul>
+
+<div class="container-fluid">
+  <div class="row content-wrap">
+    <div class="col-sm sidebar">
+      <div class="sidebar-header">
+      <a href="#"><img src="{{ asset('images/logo.svg') }}"></a>
+      </div>
+      <ul class="col-sm sidebar-menu">
+        <li><a href="{{ route('dashboard.index') }}"><img src="{{ asset('images/House.svg') }}" alt="dashboard"><span>Dashboard</span></a></li>
+        <li><a href="{{ route('dashboard.create-profile') }}"><img src="{{ asset('images/user.svg') }}" alt="user"><span>Profile</span></a></li>
+        <li><a href="{{ route('dashboard.create-jadwal') }}"><img src="{{ asset('images/jadwal.svg') }}" alt="jadwal"><span>Jadwal</span></a></li>
+        <li><a href="{{ route('dashboard.add-dokter') }}"><img src="{{ asset('images/kelas.svg') }}" alt="dokter"><span>Dokter</span></a></li>
+        <li><a href="{{ route('dashboard.create-notes') }}"><img src="{{ asset('images/House.svg') }}" alt="notes"><span>Notes</span></a></li>
+      </ul>
     </div>
+  </div>
+</div>

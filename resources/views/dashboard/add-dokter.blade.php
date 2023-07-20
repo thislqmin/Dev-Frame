@@ -2,7 +2,7 @@
 @section('title', 'Page Dokter')
 @section('content')
 @include('components.sidebar')
-<section class="header mb-70">
+<section class="row header mb-70">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
