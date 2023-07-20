@@ -13,11 +13,11 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-      <div class="col-md-1 sidebar">
+      <div class="col-sm sidebar">
         <div class="sidebar-header">
         <a href="#"><img src="{{ asset('images/logo.svg') }}"></a>
         </div>
-        <ul class="sidebar-menu">
+        <ul class="col-sm sidebar-menu">
           <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
           <li><a href="{{ route('dashboard.create-profile') }}">Profile</a></li>
           <li><a href="{{ route('dashboard.create-jadwal') }}">Jadwal</a></li>
