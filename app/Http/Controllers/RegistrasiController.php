@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrasiController extends Controller
 {
@@ -33,11 +34,6 @@ class RegistrasiController extends Controller
     public function dashboard()
     {
         return view('dashboard.index');
-    }
-    
-    public function profile()
-    {
-        return view('dashboard.create-profile');
     }
 
     public function dokter()
