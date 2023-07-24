@@ -12,43 +12,54 @@
 <body>
 
 <!-- Form Login -->
-<form action="">
+<form action="{{ route('signup') }}" method="POST">
+@csrf
 <div class="container col-5 row g-2">
     <h1 class="sign"><b>Sign Up</b></h1>
     <p class="mt-3 mb-5 in">Sign up with email to continue</p>
-        <div class="form col-md">
+    @if ($errors->has('password'))
+        <div class="alert alert-danger">
+            {{ $errors->first('password') }}
+        </div>
+    @endif
+    <!-- <div class="form col-md">
         <div class="form-floating">
-        <input type="text" class="form-control" id="floatingInputGrid" placeholder="Muhammad" value="">
+        <input type="text" class="form-control" name="first_name" id="floatingInputGrid" placeholder="Muhammad" value="">
         <label for="floatingInputGrid">First Name</label>
         </div>
     </div>
     <div class="form col-md">
         <div class="form-floating mb-3">
-        <input type="ext" class="form-control" id="floatingInputGrid" placeholder="Otto" value="">
+        <input type="ext" class="form-control" name="last_name" id="floatingInputGrid" placeholder="Otto" value="">
         <label for="floatingSelectGrid">Last Name</label>
         </div>
+    </div> -->
+    <div class="form form-floating mt-2 mb-3">
+        <input type="text" name="name" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Name</label>
+        <label for="image"><img src="" alt=""></label>
     </div>
     <div class="form form-floating mt-2 mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email</label>
         <label for="image"><img src="" alt=""></label>
     </div>
     <div class="form form-floating mb-3">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
     </div>
     <div class="form form-floating mt-2">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" name="password_confirmation" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Re-type Password</label>
     </div>
     <div>
         <p class="lupa mt-3 mb-4">Forgot Your Password ?</p>
     </div>
     <div class="">
-        <button type="button" id="btn" class="button-login btn ms-auto">Sign Up</button>
+        <button type="submit" id="btn" class="button-login btn ms-auto">Sign Up</button>
     </div>
     <div class="account row mt-3">
-        <p class="forgot"><a href="{{ route('regis.signin') }}" style="text-decoration: none">Don't have an account ? Sign Up</a></p>
+        <p class="forgot"><a href="{{ route('regis.signin') }}" style="text-decoration: none">Already have account ? Sign in</a></p>
     </div>
 </div>
 </form>
