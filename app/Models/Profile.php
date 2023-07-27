@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
-
+    
+    protected $table = 'profiles';
+    protected $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.
      *
@@ -27,8 +29,8 @@ class Profile extends Model
     /**
      * Get the user that owns the profile.
      */
-    public function user()
+    public function userModel()
     {
-        return $this->belongsTo(UserModel::class);
+        return $this->belongsTo(User::class);
     }
 }

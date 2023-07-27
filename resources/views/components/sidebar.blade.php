@@ -56,9 +56,9 @@
       <ul class="col-sm sidebar-menu">
         <li><a href="{{ route('dashboard.index') }}"><img src="{{ asset('images/House.svg') }}" alt="dashboard"><span>Dashboard</span></a></li>
         <li><a href="{{ route('profile.view') }}"><img src="{{ asset('images/user.svg') }}" alt="user"><span>Profile</span></a></li>
-        <li><a href="{{ route('dashboard.create-jadwal') }}"><img src="{{ asset('images/jadwal.svg') }}" alt="jadwal"><span>Jadwal</span></a></li>
+        <li><a href="{{ route('schedule.view') }}"><img src="{{ asset('images/jadwal.svg') }}" alt="jadwal"><span>Jadwal</span></a></li>
         <li><a href="{{ route('dashboard.add-dokter') }}"><img src="{{ asset('images/kelas.svg') }}" alt="dokter"><span>Dokter</span></a></li>
-        <li><a href="{{ route('dashboard.create-notes') }}"><img src="{{ asset('images/House.svg') }}" alt="notes"><span>Notes</span></a></li>
+        <li><a href="{{ route('notes.index') }}"><img src="{{ asset('images/House.svg') }}" alt="notes"><span>Notes</span></a></li>
         <li>
           <form action="{{ route('logout') }}" method="POST">
               @csrf

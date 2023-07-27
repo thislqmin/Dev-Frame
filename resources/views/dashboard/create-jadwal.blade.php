@@ -6,17 +6,24 @@
         <div class="col-md-3">
             @include('components.sidebar')
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 pt-5">
             <section class="header mb-70">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <h1 class="jumbo-header mb-30">
-                                Ini Halaman<br>
-                                Jadwal
-                            </h1>
+                    <h2>Pilih Jadwal Konsultasi</h2>
+                    <p>Dokter: {{ $doctor->name }}</p>
+                    <form action="{{ route('schedules.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
+                        <div class="form-group">
+                            <label for="date">Tanggal Konsultasi</label>
+                            <input type="text" class="form-control datepicker" id="date" name="date">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="time">Waktu Konsultasi</label>
+                            <input type="time" class="form-control" id="time" name="time" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Pilih</button>
+                    </form>
                 </div>
             </section>
         </div>

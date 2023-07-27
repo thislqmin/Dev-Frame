@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Profile;
 
 class ProfileController extends Controller
 {
@@ -16,7 +15,7 @@ class ProfileController extends Controller
     }
 
     // Method untuk menyimpan atau mengupdate profile
-    public function storeOrUpdate(Request $request)
+    public function update(Request $request)
     {
         $request->validate([
             'phone' => 'required|string|max:20',
@@ -26,25 +25,26 @@ class ProfileController extends Controller
             'birthdate' => 'required|date',
             'bio' => 'required|string|max:1000',
         ]);
-        $user = Auth::user()->profile;
-        $profileData = [
-            'user_id' => $request->input('user_id'),
-            'phone' => $request->input('phone'),
-            'occupation' => $request->input('occupation'),
-            'workplace' => $request->input('workplace'),
-            'birthplace' => $request->input('birthplace'),
-            'birthdate' => $request->input('birthdate'),
-            'bio' => $request->input('biodata'),
-        ];
-        $user->profile()->updateOrCreate(['user_id' => $user->id], $profileData);
+    
+        $user = Auth::user();
 
+        // Isi data profil berdasarkan input yang dikirim dari form
+        $user->phone = $request->input('phone');
+        $user->occupation = $request->input('occupation');
+        $user->workplace = $request->input('workplace');
+        $user->birthplace = $request->input('birthplace');
+        $user->birthdate = $request->input('birthdate');
+        $user->bio = $request->input('bio');
+
+        // Simpan perubahan pada profile
+        $user->save();
+    
         return redirect()->route('profile.view')->with('success', 'Profile updated successfully!');
     }
     public function view()
     {
         $user = Auth::user();
         $profile = $user->profile;
-
         return view('dashboard.profile', compact('profile'));
     }
 
