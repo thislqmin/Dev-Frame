@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Doctor;
+use App\Models\Schedule;
 use Illuminate\Support\Facades\Auth;
 
 class RegistrasiController extends Controller
@@ -38,7 +40,8 @@ class RegistrasiController extends Controller
 
     public function dokter()
     {
-        return view('dashboard.add-dokter');
+        $doctors = Doctor::all();
+        return view('dashboard.add-dokter', compact('doctors'));
     }
 
     public function notes()
@@ -46,10 +49,17 @@ class RegistrasiController extends Controller
         return view('dashboard.create-notes');
     }
 
-    public function jadwal()
-    {
-        return view('dashboard.create-jadwal');
-    }
+    // public function jadwal($doctorId)
+    // {
+    //     $user = Auth::user();
+    //     $doctor = Doctor::findOrFail($doctorId);
+
+    //     $schedules = Schedule::where('doctor_id', $doctorId)
+    //         ->where('user_id', $user->id)
+    //         ->get();
+
+    //     return view('dashboard.create-jadwal', compact('doctor', 'schedules'));
+    // }
 
 
     /**
